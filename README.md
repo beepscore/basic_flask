@@ -43,6 +43,11 @@ On macos browser can use either of 2 ip addresses
     or
     http://127.0.0.1:5000/
 
+## run on macos, view in ios browser
+
+    10.0.0.7:5000/hello/joe
+
+
 # Appendix: git repo
 
     git init
