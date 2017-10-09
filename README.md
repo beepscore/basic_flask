@@ -39,13 +39,13 @@ On macos browser enter 10.0.0.4:5000
 127.0.0.1 - - [09/Oct/2017 12:19:40] "GET /favicon.ico HTTP/1.1" 404 -
 
 On macos browser can use either of 2 ip addresses
-    10.0.0.0:5000
-    or
     http://127.0.0.1:5000/
+    or
+    10.0.0.0:5000
 
 ## run on macos, view in ios browser
 
-    10.0.0.7:5000/hello/joe
+    http://10.0.0.7:5000/hello/joe
 
 
 # Appendix: git repo
