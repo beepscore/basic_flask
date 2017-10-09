@@ -17,10 +17,17 @@ def cakes():
     return 'Yummy cakes!'
 
 # route passes name from url to hello function
+# allow for empty name
+# https://stackoverflow.com/questions/14023664/flask-url-route-route-several-urls-to-the-same-function
+@app.route('/hello/')
 @app.route('/hello/<name>')
-def hello(name):
-    # pass name from hello to render_template
-    return render_template('page.html', name=name)
+def hello(name=None):
+    if name is None:
+        return render_template('page.html', name='')
+    else:
+        # pass name from hello to render_template
+        spaced_name = ' ' + name
+        return render_template('page.html', name=spaced_name)
 
 if __name__ == '__main__':
     # '0.0.0.0' accessible to any device on the network
