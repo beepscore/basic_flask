@@ -18,7 +18,19 @@ Install flask
 
     conda install -n beepscore flask
 
-## create git repo
+# start server
+
+    python app.py
+
+shows Running on http://0.0.0.0:5000
+
+## view web page
+### Fing
+fing shows raspberry pi is on local network at 10.0.0.4  
+
+On macos browser enter 10.0.0.4:5000  
+
+# Appendix: git repo
 
     git init
 
