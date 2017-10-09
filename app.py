@@ -1,5 +1,7 @@
 from flask import Flask, render_template
 
+# flask uses jinja to render templates
+# http://jinja.pocoo.org/
 
 app = Flask(__name__)
 
