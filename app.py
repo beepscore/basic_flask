@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 
 
 app = Flask(__name__)
@@ -9,7 +9,8 @@ app = Flask(__name__)
 # port :5000
 @app.route('/')
 def index():
-    return 'Hello world'
+    # render_template searches directory templates
+    return render_template('index.html')
 
 @app.route('/cakes')
 def cakes():
