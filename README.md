@@ -22,4 +22,5 @@ Install flask
 
     git init
 
-## TODO: push to github
+## push to github
+can use 2 factor authentication or https with token
