@@ -26,10 +26,25 @@ def cakes():
 def hello(name=None):
     if name is None:
         return render_template('page.html', name='')
-    else:
-        # pass name from hello to render_template
-        spaced_name = ' ' + name
-        return render_template('page.html', name=spaced_name)
+
+    # pass name from hello to render_template
+    spaced_name = ' ' + name
+    return render_template('page.html', name=spaced_name)
+
+@app.route('/echo/<text>')
+def echo(text=None):
+    if text is None:
+        return render_template('echo.html', text='')
+
+    # example use web app to call python to run a subprocess command
+    # https://stackoverflow.com/questions/1996518/retrieving-the-output-of-subprocess-call
+    from subprocess import PIPE, run
+
+    command = ['echo', text]
+    result = run(command, stdout=PIPE, stderr=PIPE, universal_newlines=True)
+    print(result.returncode, result.stdout, result.stderr)
+    return render_template('echo.html', text=result.stdout)
+
 
 if __name__ == '__main__':
     # '0.0.0.0' accessible to any device on the network
