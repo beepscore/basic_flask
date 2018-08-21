@@ -12,7 +12,7 @@ https://www.raspberrypi.org/learning/python-web-server-with-flask/worksheet
 
 Activate environment
 
-    source activate beepscore
+    conda activate beepscore
 
 Install flask
 
