@@ -7,9 +7,6 @@ app = Flask(__name__)
 
 
 # / is the website root, the entry point
-# http://127.0.0.1:5000
-# home http://127.0.0.1
-# port :5000
 @app.route('/')
 def index():
     # render_template searches directory templates
@@ -51,5 +48,20 @@ def echo(text=None):
 
 
 if __name__ == '__main__':
-    # '0.0.0.0' accessible to any device on the network
-    app.run(debug=True, host='0.0.0.0')
+
+    # ipv4
+    # '0.0.0.0' accessible to any device on the network, including localhost http://127.0.0.1
+    # for example on server machine http://0.0.0.0:5000/ may redirect to localhost http://127.0.0.1:5000
+    # https://www.digitalocean.com/community/questions/accessing-debugger-for-flask-127-0-0-1-5000
+    host = '0.0.0.0'
+
+    # alternatively could use ipv6
+    # https://stackoverflow.com/questions/21673068/dual-ipv4-and-ipv6-support-in-flask-applications#21689979
+    # host = '::'
+    # e.g. http://[::]:9092/
+
+    # flask default port is 5000
+    port = '5000'
+    # port = '9092'
+
+    app.run(debug=True, host=host, port=port)
