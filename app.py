@@ -5,6 +5,7 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
+
 # / is the website root, the entry point
 # http://127.0.0.1:5000
 # home http://127.0.0.1
@@ -14,9 +15,11 @@ def index():
     # render_template searches directory templates
     return render_template('index.html')
 
+
 @app.route('/cakes')
 def cakes():
     return 'Yummy cakes!'
+
 
 # route passes name from url to hello function
 # allow for empty name
@@ -30,6 +33,7 @@ def hello(name=None):
     # pass name from hello to render_template
     spaced_name = ' ' + name
     return render_template('page.html', name=spaced_name)
+
 
 @app.route('/echo/<text>')
 def echo(text=None):
